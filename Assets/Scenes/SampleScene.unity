@@ -732,6 +732,7 @@ GameObject:
   - component: {fileID: 468429339}
   - component: {fileID: 468429340}
   - component: {fileID: 468429341}
+  - component: {fileID: 468429342}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -916,6 +917,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1fca4d48a629984f98c33d1ac292ee3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &468429342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468429333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497fb4907a9efd14490dc3c255afa087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: 5
 --- !u!1 &470646293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1587,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2641195697824432329, guid: 1fc6be8b046574e4ebe79307997323c8, type: 3}
       propertyPath: m_Name
-      value: Kill
+      value: Trap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641195697824432329, guid: 1fc6be8b046574e4ebe79307997323c8, type: 3}
+      propertyPath: m_TagString
+      value: Trap
       objectReference: {fileID: 0}
     - target: {fileID: 5268454253716909044, guid: 1fc6be8b046574e4ebe79307997323c8, type: 3}
       propertyPath: m_LocalPosition.x
