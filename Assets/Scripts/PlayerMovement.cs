@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public string hero = "Steve"; 
     public bool isAlive = true;
     public Vector3 direction; //XYZ coords
-    
+    public Rigidbody playerRb; //Connecting a rigidbody
     void Start()
     {
         Debug.Log("My name is " + hero);
@@ -17,8 +17,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(direction * Time.deltaTime * speed);
+        //transform.Translate(direction * Time.deltaTime * speed);
             //the . is there to access the function of transform
+        //rigidbody is the proper way to connect movement with physics
+        playerRb.linearVelocity = direction * speed; 
     }
     
     private void OnMove(InputValue value)
