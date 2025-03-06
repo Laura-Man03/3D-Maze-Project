@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collatable
   - Trap
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

@@ -3,11 +3,11 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     public int points = 5;
-    private PlayerMovement playerMovement;
+    private Vector3 respawnPosition;
 
     private void Start()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+       respawnPosition = transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -16,6 +16,11 @@ public class Health : MonoBehaviour
         {
             Damage(1);
         }
+
+        if (other.CompareTag("Checkpoint"))
+        {
+            respawnPosition = transform.position;
+        }
     }
     //Instead of destroying the player, it resets the health points and moves the player to the starting position
     private void Damage(int value)
@@ -23,13 +28,10 @@ public class Health : MonoBehaviour
         points -= value;
         if (points < 1)
         {
-            ResetHealth();//reset health
-            playerMovement.ResetPlayer(); // Move player to start 
+            //Destroy(gameObject);
+           transform.position = respawnPosition;
+           points = 5;
         }
     }
-    //points go back to 5
-    public void ResetHealth()
-    {
-        points = 5;
-    }
+    
 }

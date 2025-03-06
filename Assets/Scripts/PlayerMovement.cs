@@ -8,12 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public string hero = "Steve"; 
     public bool isAlive = true;
     public Vector3 direction; //XYZ coords
-    private Vector3 startingPosition; 
-    //added startingPosition to track where the player starts
+    
     void Start()
     {
         Debug.Log("My name is " + hero);
-        startingPosition = transform.position; // Save initial position
+       
     }
 
     void Update()
@@ -28,11 +27,5 @@ public class PlayerMovement : MonoBehaviour
         Vector2 inputValue = value.Get<Vector2>();
         direction = new Vector3(inputValue.x, 0, inputValue.y);
     }
-    //Created a ResetPlayer() method to reset position and health
-    public void ResetPlayer() 
-    {
-        transform.position = startingPosition; 
-        FindObjectOfType<Health>().ResetHealth(); 
-        //Connected Health and PlayerMovement so they communicate properly
-    }
+   
 }
