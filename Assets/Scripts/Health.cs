@@ -1,9 +1,11 @@
 using UnityEngine;
+using TMPro;
 
 public class Health : MonoBehaviour
 {
     public int points = 5;
     private Vector3 respawnPosition;
+    public TextMeshProUGUI healthText;
 
     private void Start()
     {
@@ -19,18 +21,22 @@ public class Health : MonoBehaviour
 
         if (other.CompareTag("Checkpoint"))
         {
-            respawnPosition = transform.position;
+            respawnPosition = other.transform.position;
+            respawnPosition.y = transform.position.y;
         }
     }
     //Instead of destroying the player, it resets the health points and moves the player to the starting position
     private void Damage(int value)
     {
         points -= value;
+        //$ is used to help with value of points
+        healthText.text = $"<b>Health:</b> {points}";
+        transform.position = respawnPosition;
+        //points = 5;
+        
         if (points < 1)
         {
-            //Destroy(gameObject);
-           transform.position = respawnPosition;
-           points = 5;
+            Destroy(gameObject);
         }
     }
     
