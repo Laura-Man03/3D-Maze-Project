@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
     public int points = 5;
     private Vector3 respawnPosition;
     public TextMeshProUGUI healthText;
-
+    public EndScreenAnimation gameOverScreen;
     private void Start()
     {
        respawnPosition = transform.position;
@@ -36,6 +36,7 @@ public class Health : MonoBehaviour
         
         if (points < 1)
         {
+            gameOverScreen.StartFade();
             Destroy(gameObject);
         }
     }
