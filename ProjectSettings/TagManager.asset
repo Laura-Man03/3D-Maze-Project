@@ -7,6 +7,7 @@ TagManager:
   - Collatable
   - Trap
   - Checkpoint
+  - Fireball
   layers:
   - Default
   - TransparentFX
