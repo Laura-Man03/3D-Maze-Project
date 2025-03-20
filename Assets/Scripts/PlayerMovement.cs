@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Asks the input system what keys are being pressed
         Vector2 inputValue = value.Get<Vector2>();
-        direction = new Vector3(inputValue.x, 0, inputValue.y);
+        direction = new Vector3(inputValue.y, 0, -inputValue.x);
     }
 
     private void OnJump(InputValue value)
